@@ -13,30 +13,12 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-
-        Button number0 = (Button) findViewById(R.id.number0);
-        Button number1 = findViewById(R.id.number1);
-        Button number2 = findViewById(R.id.number2);
-        Button number3 = findViewById(R.id.number3);
-        Button number4 = findViewById(R.id.number4);
-        Button number5 = findViewById(R.id.number5);
-        Button number6 = findViewById(R.id.number6);
-        Button number7 = findViewById(R.id.number7);
-        Button number8 = findViewById(R.id.number8);
-        Button number9 = findViewById(R.id.number9);
-        final TextView input = (TextView) findViewById(R.id.inputNumber);
-
-    }
-
-    protected void inputNumber(Button button) {
-
     }
 
     @Override
     public void onClick(View v) {
-        TextView input = (TextView) findViewById(R.id.inputNumber);
+        TextView input = findViewById(R.id.inputNumber);
         Button b = (Button) v;
-        CharSequence text = b.getText();
 
         if (v.getTag() == null) {
             Toast.makeText(this, "Oops je sais pas", Toast.LENGTH_SHORT).show();
@@ -45,7 +27,7 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
 
         switch (v.getTag().toString()) {
             case "OP":
-                Toast.makeText(this, "Opération", Toast.LENGTH_SHORT).show();
+                operations(b, input);
                 break;
 
             case "NB":
@@ -57,10 +39,15 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
                 break;
         }
 
+
+    }
+
+    //    CASE CLICK OPERATION
+    void operations(Button b, TextView input) {
         switch (b.getText().toString()) {
             case "←":
                 String currentString = input.getText().toString();
-                if (currentString != null && currentString.length() > 0) {
+                if (currentString.length() > 0) {
                     currentString = currentString.substring(0, currentString.length() - 1);
                 }
                 input.setText(currentString);
@@ -69,7 +56,36 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
             case "C":
                 input.setText("");
                 break;
-        }
 
+            default:
+                String operator = b.getText().toString();
+                Toast.makeText(this, operator, Toast.LENGTH_SHORT).show();
+                calcul(input, operator);
+                break;
+        }
     }
+
+    void calcul(TextView input, String operator) {
+        TextView stock = findViewById(R.id.stockNumber);
+        if(stock.getText()!=null) {
+            double stockContent = Double.parseDouble(stock.getText().toString());
+        }
+        if (input.getText()!=null){
+            double inputContent = Double.parseDouble(input.getText().toString());
+        }
+//        double inputContent = Double.parseDouble(input.getText().toString());
+
+//        switch (operator) {
+//            case "+":
+//                Toast.makeText(this, "+++", Toast.LENGTH_SHORT).show();
+//                break;
+//            default:
+//                break;
+//        }
+//        stock.setText(input.getText());
+
+        input.setText("");
+    }
+
+
 }
