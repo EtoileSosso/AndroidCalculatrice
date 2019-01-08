@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainPage"
+    android:background="#111111">
+
+    <TextView
+        android:id="@+id/inputNumber"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="right"
+        android:paddingRight="15dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:maxLength="34"/>
+
+    <TextView
+        android:id="@+id/OutputNumber"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="right"
+        android:paddingRight="15dp"
+        android:text="TextView"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@id/inputNumber" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintTop_toBottomOf="@+id/OutputNumber">
+
+        <!--FIRST ROW-->
+        <Button
+            android:id="@+id/buttonReset"
+            style="@style/ButtonsOrange"
+            android:text="C"
+            android:tag="OP"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <Button
+            android:id="@+id/operationSplit"
+            style="@style/Buttons"
+            android:text="/"
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/buttonReset"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25"
+
+            />
+
+        <Button
+            android:id="@+id/operationMultiply"
+            style="@style/Buttons"
+            android:text="x"
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/operationSplit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <Button
+            android:id="@+id/buttonBack"
+            style="@style/Buttons"
+            android:text="←"
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/operationMultiply"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25"
+
+            />
+
+        <!--SECOND ROW-->
+
+        <Button
+            android:id="@+id/number7"
+            style="@style/Buttons"
+            android:text="7"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonReset"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <Button
+            android:id="@+id/number8"
+            style="@style/Buttons"
+            android:text="8"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number7"
+            app:layout_constraintTop_toBottomOf="@id/operationSplit"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <Button
+            android:id="@+id/number9"
+            style="@style/Buttons"
+            android:text="9"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number8"
+            app:layout_constraintTop_toBottomOf="@id/operationMultiply"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <Button
+            android:id="@+id/operationSubstract"
+            style="@style/Buttons"
+            android:text="-"
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number9"
+            app:layout_constraintTop_toBottomOf="@id/buttonBack"
+            app:layout_constraintWidth_percent="0.25"
+
+            />
+
+        <!--THIRD ROW-->
+        <Button
+            android:id="@+id/number4"
+            style="@style/Buttons"
+            android:text="4"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number7"
+            app:layout_constraintWidth_percent="0.25"
+          />
+
+        <Button
+            android:id="@+id/number5"
+            style="@style/Buttons"
+            android:text="5"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number4"
+            app:layout_constraintTop_toBottomOf="@id/number8"
+            app:layout_constraintWidth_percent="0.25"
+            />
+
+        <Button
+            android:id="@+id/number6"
+            style="@style/Buttons"
+            android:text="6"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number5"
+            app:layout_constraintTop_toBottomOf="@id/number9"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <Button
+            android:id="@+id/operationAdd"
+            style="@style/Buttons"
+            android:text="+"
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number6"
+            app:layout_constraintTop_toBottomOf="@id/operationSubstract"
+            app:layout_constraintWidth_percent="0.25"
+            />
+
+        <!--FOURTH ROW-->
+        <Button
+            android:id="@+id/number1"
+            style="@style/Buttons"
+            android:text="1"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number4"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <Button
+            android:id="@+id/number2"
+            style="@style/Buttons"
+            android:text="2"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number1"
+            app:layout_constraintTop_toBottomOf="@id/number5"
+            app:layout_constraintWidth_percent="0.25"
+            />
+
+        <Button
+            android:id="@+id/number3"
+            style="@style/Buttons"
+            android:text="3"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number2"
+            app:layout_constraintTop_toBottomOf="@id/number6"
+            app:layout_constraintWidth_percent="0.25"
+            />
+
+        <Button
+            android:id="@+id/parentheses"
+            style="@style/Buttons"
+            android:text="()"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number3"
+            app:layout_constraintTop_toBottomOf="@id/operationAdd"
+            app:layout_constraintWidth_percent="0.25"
+           />
+
+        <!--FIFTH ROW-->
+        <Button
+            android:id="@+id/number0"
+            style="@style/Buttons"
+            android:text="0"
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number1"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <Button
+            android:id="@+id/dot"
+            style="@style/Buttons"
+            android:text="."
+            android:tag="NB"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/number0"
+            app:layout_constraintTop_toBottomOf="@id/number2"
+            app:layout_constraintWidth_percent="0.25"
+            />
+
+        <Button
+            android:id="@+id/power"
+            style="@style/Buttons"
+            android:text="^"
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/dot"
+            app:layout_constraintTop_toBottomOf="@id/number3"
+            app:layout_constraintWidth_percent="0.25" />
+
+
+        <Button
+            android:id="@+id/equal"
+            style="@style/ButtonsOrange"
+            android:text="="
+            android:tag="OP"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/power"
+            app:layout_constraintTop_toBottomOf="@id/parentheses"
+            app:layout_constraintWidth_percent="0.25" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
